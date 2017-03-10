@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Exceptions
+!*.vimrc
+!*.vim
+!*.bashrc
+!.gitignore
