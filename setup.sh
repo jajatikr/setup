@@ -1,19 +1,27 @@
 #!/usr/bin/env bash
 
+GREEN='\033[1;32m'
+NC='\033[0m'
+
+echo -e "\n${GREEN}Adding Webupd8 sublime and tor repositories${NC}\n"
 # Add Webupd8 sublime text 3 and tor browser repository and update
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo add-apt-repository ppa:webupd8team/tor-browser
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+sudo add-apt-repository ppa:webupd8team/tor-browser -y
 sudo apt-get update
 sudo apt-get --yes --allow-downgrades --allow-remove-essential --allow-change-held-packages dist-upgrade
 sudo apt-get --yes --allow-downgrades --allow-remove-essential --allow-change-held-packages autoremove
 
+
 # Install packages from apt_requirements.txt
+echo -e "\n${GREEN}Installing apt-get packages${NC}\n"
 xargs sudo apt-get -y install < apt_requirements.txt
 
 # Install Python modules
+echo -e "\n${GREEN}Installing python modules${NC}\n"
 pip3 install --user -r requirements.txt
 
 # Install Google Chrome
+echo -e "\n${GREEN}Installing Google Chrome${NC}\n"
 sudo dpkg -i google-chrome-*.deb
 sudo apt-get -fy install
 sudo dpkg -i google-chrome-*.deb
@@ -21,11 +29,11 @@ sudo dpkg -i google-chrome-*.deb
 # Install IDEA Ultimate, Pycharm Professional and Android Studio
 sudo chmod +x jetbrains_setup.sh
 ./jetbrains_setup.sh
-IU
+echo -e "IU\n"
 ./jetbrains_setup.sh
-A
+echo -e "A\n"
 ./jetbrains_setup.sh
-PP
+echo -e "PP\n"
 
 
 

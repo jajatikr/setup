@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 
+GREEN='\033[1;32m'
+PURPLE='\033[1;35m'
+NC='\033[0m'
+
 install() {
 
-    echo Extracting $2
+    echo -e "\n${GREEN}Extracting...${NC}\n"
     if [ $1 == "tar" ]; then
         sudo tar -xzf $2 -C /opt/
     elif [ $1 == "zip" ]; then
         sudo unzip -q $2 -d /opt/
     fi
-    echo "Extraction completed"
 
-    echo "Installing..."
+    echo -e "\n${GREEN}Installing...${NC}\n"
     cd /opt/$3/bin
     ./$4
-    echo "Installation completed"
     exit
 
 }
@@ -23,10 +25,10 @@ edition=$(echo 'Z')
 
 # Read user input until given options are provided
 until [[ $edition == "IU" || $edition == "IC" || $edition == "A" || $edition == "PU" || $edition == "PC" ]]; do
-    echo "Installation options"
-    echo "IntelliJ IDEA Ultimate/Community edition [IU/IC]"
-    echo "Pycharm Professional/Community edition   [PP/PC]"
-    echo "Google Android Studio                    [A]"
+    echo -e "\n${PURPLE}Installation options"
+    echo -e "IntelliJ IDEA Ultimate/Community edition [IU/IC]"
+    echo -e "Pycharm Professional/Community edition   [PP/PC]"
+    echo -e "Google Android Studio                    [A]${NC}\n"
     read edition
 done
 
