@@ -8,6 +8,9 @@ sudo apt-get update
 # Install packages from apt_requirements.txt
 xargs sudo apt-get -y install < apt_requirements.txt
 
+# Install Python packages
+pip3 install --user -r requirements.txt
+
 # Install Google Chrome
 sudo dpkg -i google-chrome-*.deb
 sudo apt-get -fy install
