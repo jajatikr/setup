@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Install IntelliJ IDEA
-
 install() {
 
     echo Extracting $2
@@ -23,7 +21,10 @@ install() {
 edition=$(echo 'Z')
 
 until [[ $edition == "IU" || $edition == "IC" || $edition == "A" || $edition == "PU" || $edition == "PC" ]]; do
-    echo -n "Install IntelliJ IDEA or Pycharm (Ultimate/Community edition) or Android-Studio [IU/IC/PU/PC/A] : "
+    echo "Installation options"
+    echo "IntelliJ IDEA Ultimate/Community edition [IU/IC]"
+    echo "Pycharm Professional/Community edition   [PP/PC]"
+    echo "Google Android Studio                    [A]"
     read edition
 done
 
