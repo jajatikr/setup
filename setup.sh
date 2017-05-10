@@ -4,11 +4,13 @@
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:webupd8team/tor-browser
 sudo apt-get update
+sudo apt-get --yes --allow-downgrades --allow-remove-essential --allow-change-held-packages dist-upgrade
+sudo apt-get --yes --allow-downgrades --allow-remove-essential --allow-change-held-packages autoremove
 
 # Install packages from apt_requirements.txt
 xargs sudo apt-get -y install < apt_requirements.txt
 
-# Install Python packages
+# Install Python modules
 pip3 install --user -r requirements.txt
 
 # Install Google Chrome
