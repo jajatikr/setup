@@ -18,8 +18,10 @@ install() {
 
 }
 
+# Random inititalization
 edition=$(echo 'Z')
 
+# Read user input until given options are provided
 until [[ $edition == "IU" || $edition == "IC" || $edition == "A" || $edition == "PU" || $edition == "PC" ]]; do
     echo "Installation options"
     echo "IntelliJ IDEA Ultimate/Community edition [IU/IC]"
@@ -28,7 +30,7 @@ until [[ $edition == "IU" || $edition == "IC" || $edition == "A" || $edition == 
     read edition
 done
 
-
+# Install based on user input
 if [ $edition == "IU" ]; then
     install "tar" "ideaIU-*.tar.gz" "idea-IU-*" "idea.sh"
 elif [ $edition == "IC" ]; then
