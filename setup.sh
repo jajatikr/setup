@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
+# Initialize colors
 GREEN='\033[1;32m'
 NC='\033[0m'
 
-echo -e "\n${GREEN}Adding Webupd8 sublime and tor repositories${NC}\n"
+# Copy .vimrc to home
+cp .vimrc /home/$USER
+
 # Add Webupd8 sublime text 3 and tor browser repository and update
+echo -e "\n${GREEN}Adding Webupd8 sublime and tor repositories${NC}\n"
 sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
 sudo add-apt-repository ppa:webupd8team/tor-browser -y
 sudo apt-get update
@@ -29,11 +33,8 @@ sudo dpkg -i google-chrome-*.deb
 # Install IDEA Ultimate, Pycharm Professional and Android Studio
 sudo chmod +x jetbrains_setup.sh
 ./jetbrains_setup.sh
-echo -e "IU\n"
 ./jetbrains_setup.sh
-echo -e "A\n"
 ./jetbrains_setup.sh
-echo -e "PP\n"
 
 
 
