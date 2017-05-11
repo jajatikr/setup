@@ -24,7 +24,7 @@ install() {
 edition=$(echo 'Z')
 
 # Read user input until given options are provided
-until [[ $edition == "IU" || $edition == "IC" || $edition == "A" || $edition == "PU" || $edition == "PC" ]]; do
+until [[ $edition == "IU" || $edition == "IC" || $edition == "A" || $edition == "PP" || $edition == "PC" ]]; do
     echo -e "\n${PURPLE}Installation options"
     echo -e "IntelliJ IDEA Ultimate/Community edition [IU/IC]"
     echo -e "Pycharm Professional/Community edition   [PP/PC]"
@@ -40,7 +40,7 @@ elif [ $edition == "IC" ]; then
 elif [ $edition == "A" ]; then
     sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 unzip
     install "zip" "android-*.zip" "android-*" "studio.sh"
-elif [ $edition == "PU" ]; then
+elif [ $edition == "PP" ]; then
     install "tar" "pycharm-professional-*.tar.gz" "pycharm-*" "pycharm.sh"
 elif [ $edition == "PC" ]; then
     install "tar" "pycharm-community-*.tar.gz" "pycharm-community-*" "pycharm.sh"
