@@ -20,6 +20,9 @@ sudo apt-get --yes --allow-downgrades --allow-remove-essential --allow-change-he
 echo -e "\n${GREEN}Installing apt-get packages${NC}\n"
 xargs sudo apt-get -y install < apt_requirements.txt
 
+# Copy Sublime Text 3 User preferences
+cp sublime_preferences/*.sublime-settings ~/.config/sublime-text-3/Packages/User/
+
 # Install Python modules
 echo -e "\n${GREEN}Installing python modules${NC}\n"
 pip3 install --user -r requirements.txt

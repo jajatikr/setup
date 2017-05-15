@@ -7,3 +7,5 @@
 !.gitignore
 !*.txt
 !*.sh
+!sublime_preferences/
+!*.sublime-settings

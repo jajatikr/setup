@@ -1,0 +1,19 @@
+{
+	"installed_packages":
+	[
+		"Alignment",
+		"Anaconda",
+		"BracketHighlighter",
+		"ColorPicker",
+		"DocBlockr",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"HTML5",
+		"JsFormat",
+		"Package Control",
+		"Placeholders",
+		"SideBarEnhancements",
+		"SublimeLinter"
+	]
+}
