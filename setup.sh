@@ -22,6 +22,8 @@ xargs sudo apt-get -y install < apt_requirements.txt
 
 # Copy Sublime Text 3 User preferences
 cp sublime_preferences/*.sublime-settings ~/.config/sublime-text-3/Packages/User/
+cp sublime_preferences/*.sublime-theme ~/.config/sublime-text-3/Packages/User/
+cp sublime_preferences/*.sublime-build ~/.config/sublime-text-3/Packages/User/
 
 # Install Python modules
 echo -e "\n${GREEN}Installing python modules${NC}\n"
