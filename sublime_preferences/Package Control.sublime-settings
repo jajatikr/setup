@@ -1,19 +1,26 @@
 {
 	"installed_packages":
 	[
+		"A File Icon",
 		"Alignment",
 		"Anaconda",
 		"BracketHighlighter",
+		"Color Highlighter",
 		"ColorPicker",
+		"Compare Side-By-Side",
+		"CSScomb",
 		"DocBlockr",
 		"Emmet",
+		"FindKeyConflicts",
 		"Git",
 		"GitGutter",
+		"HTML-CSS-JS Prettify",
 		"HTML5",
-		"JsFormat",
+		"JavaScript Snippets",
 		"Package Control",
 		"Placeholders",
 		"SideBarEnhancements",
-		"SublimeLinter"
+		"SublimeLinter",
+		"SublimeLinter-jshint"
 	]
 }

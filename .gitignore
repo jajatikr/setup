@@ -9,3 +9,5 @@
 !*.sh
 !sublime_preferences/
 !*.sublime-settings
+!*.sublime-theme
+!*.sublime-build
