@@ -1,7 +1,6 @@
 vim
 git
-python-pip
+curl
 python3-pip
 openjdk-8-jdk
-sublime-text-installer
 tor-browser

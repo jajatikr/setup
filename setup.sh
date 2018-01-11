@@ -8,8 +8,7 @@ NC='\033[0m'
 cp .vimrc /home/$USER
 
 # Add Webupd8 sublime text 3 and tor browser repository and update
-echo -e "\n${GREEN}Adding Webupd8 sublime and tor repositories${NC}\n"
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+echo -e "\n${GREEN}Adding Webupd8 tor repository${NC}\n"
 sudo add-apt-repository ppa:webupd8team/tor-browser -y
 sudo apt-get update
 sudo apt-get --yes --allow-downgrades --allow-remove-essential --allow-change-held-packages dist-upgrade
@@ -20,14 +19,12 @@ sudo apt-get --yes --allow-downgrades --allow-remove-essential --allow-change-he
 echo -e "\n${GREEN}Installing apt-get packages${NC}\n"
 xargs sudo apt-get -y install < apt_requirements.txt
 
-# Copy Sublime Text 3 User preferences
-cp sublime_preferences/*.sublime-settings ~/.config/sublime-text-3/Packages/User/
-cp sublime_preferences/*.sublime-theme ~/.config/sublime-text-3/Packages/User/
-cp sublime_preferences/*.sublime-build ~/.config/sublime-text-3/Packages/User/
+# Install Rust
+curl https://sh.rustup.rs -sSf | sh
 
-# Install Python modules
-echo -e "\n${GREEN}Installing python modules${NC}\n"
-pip3 install --user -r requirements.txt
+# Install Python Pipenv
+echo -e "\n${GREEN}Installing python Pipenv${NC}\n"
+pip3 install --user pipenv
 
 # Install Google Chrome
 echo -e "\n${GREEN}Installing Google Chrome${NC}\n"
@@ -35,11 +32,11 @@ sudo dpkg -i google-chrome-*.deb
 sudo apt-get -fy install
 sudo dpkg -i google-chrome-*.deb
 
-# Install IDEA Ultimate, Pycharm Professional and Android Studio
-sudo chmod +x jetbrains_setup.sh
-./jetbrains_setup.sh
-./jetbrains_setup.sh
-./jetbrains_setup.sh
+# Install Jetbrains toolbox
+echo -e "\n${GREEN}Installing Jetbrains Toolbox${NC}\n"
+sudo tar -xfz jetbrains-toolbox-*.tar.gz -C /opt/
+cd /opt/jetbrains-toolbox-*/
+./jetbrains-toolbox
 
 
 
