@@ -22,9 +22,9 @@ xargs sudo apt-get -y install < apt_requirements.txt
 # Install Rust
 curl https://sh.rustup.rs -sSf | sh
 
-# Install Python Pipenv
+# Install Python Pipenv (https://stackoverflow.com/questions/46391721/pipenv-command-not-found)
 echo -e "\n${GREEN}Installing python Pipenv${NC}\n"
-pip3 install --user pipenv
+sudo -H pip install -U pipenv
 
 # Install Google Chrome
 echo -e "\n${GREEN}Installing Google Chrome${NC}\n"
